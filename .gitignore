@@ -1,0 +1,11 @@
+# Raw Amazon review data (large, external source data)
+*.jsonl
+*.jsonl.gz
+*.gz
+
+# Python
+__pycache__/
+*.pyc
+
+# Classification output (regenerable)
+sentiment_predictions.csv

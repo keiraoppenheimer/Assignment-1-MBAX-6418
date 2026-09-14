@@ -1,4 +1,4 @@
-# Raw Amazon review data (large, external source data)
+# Raw Amazon review data — large, external, re-downloadable. Never committed.
 *.jsonl
 *.jsonl.gz
 *.gz
@@ -7,5 +7,56 @@
 __pycache__/
 *.pyc
 
-# Classification output (regenerable)
+# Local secrets — never committed
+.env
+.env.*
+!.env.example
+
+# Superseded / scaffolding — keep the repo clean
+sentiment_spotcheck.csv
 sentiment_predictions.csv
+sentiment_predictions_attempts.csv
+sentiment_predictions_settings.json
+# The ORIGINAL three-class run (routed through the binary prompt) is invalid,
+# and v2 sampled only {1,3,5}★ instead of the assignment's 1-2/3/4-5 ranges.
+# Both are superseded; only the corrected full-range v3 is committed.
+gpt5_threeclass.csv
+gpt5_threeclass_attempts.csv
+gpt5_threeclass_settings.json
+gpt5_threeclass_v2.csv
+gpt5_threeclass_v2_attempts.csv
+gpt5_threeclass_v2_settings.json
+# Scratch / synthetic dev fixtures (kept locally, not part of the submission)
+dev/*__dashboard_dev.html
+dev/__MACOSX/
+dev/verify_sample.py
+dev/verify_three.py
+dev/audit_step6.py
+dev/budget.py
+dev/diag_ledger.py
+dev/metrics_v3.py
+dev/recover_v3.py
+dev/nrc_verify.py
+dev/synthetic_predictions.csv
+dev/synthetic_settings.json
+# NRC lexicon archives & extracted data — large and re-downloadable; the README
+# documents how to obtain them. Only the scoring scripts are committed.
+dev/NRC-Emotion-Lexicon.zip
+dev/NRC-VAD-Lexicon.zip
+dev/NRC-Emotion-Lexicon/
+dev/NRC-VAD-Lexicon/
+# VAD is outside the required comparison — excluded with its outputs
+apply_vad.py
+gpt5_vad.csv
+# Attempts ledgers are large and not needed to reproduce reported metrics
+# (canonical results + settings are committed instead).
+gpt5_predictions_attempts.csv
+gpt5_llm_emotion_attempts.csv
+gpt5_threeclass_v3_attempts.csv
+# Binary dashboard generator docstring example points at gpt4o files (excluded);
+# the generator requires explicit --results/--settings/--out.
+poker_game.png
+poker_game_small.jpg
+
+# Everything else (the code, the balanced output, settings/prompts, dashboards,
+# screenshots, word-list scripts) is intended to be committed.
